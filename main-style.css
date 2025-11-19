@@ -1,0 +1,316 @@
+/* =========================================
+   1. GLOBAL STYLES & TYPOGRAPHY
+   ========================================= */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: white;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+h2 { color: #0d3d7f; }
+
+p { margin: 15px 0; font-size: 14px; }
+
+a { text-decoration: none; transition: 0.3s; color: #333; }
+
+/* --- MEDIA RESET --- */
+img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #0d3d7f, #000, #ffd700);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.header-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Dashboard Header Override */
+.dash-header {
+    background: linear-gradient(135deg, #000, #0d3d7f);
+    justify-content: space-between;
+}
+
+/* Navbar */
+.navbar { margin-left: auto; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: #00bcd4;
+    color: #fff;
+}
+
+/* =========================================
+   3. CONTAINER & SECTIONS
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* Hero Section (Main.html) */
+.hero { 
+    position: relative; 
+    width: 100%; 
+    height: 500px; 
+    background: #000; 
+    overflow: hidden; 
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    top: 0; left: 0;
+}
+
+.hero-text {
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    z-index: 1;
+    width: 80%;
+}
+
+/* --- ADD THIS TO MAKE TEXT BIGGER --- */
+.container p {
+    font-size: 18px;       /* Increased from 14px */
+    line-height: 1.8;      /* Adds more space between lines for readability */
+    margin-bottom: 20px;   /* Adds space between paragraphs */
+}
+
+.container h2 {
+    font-size: 32px;       /* Increases header size */
+    margin-bottom: 20px;
+}
+
+.container ul li {         /* If you have lists, size them up too */
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   4. DASHBOARD GRID
+   ========================================= */
+.dashboard-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-bottom: 5px solid #0d3d7f;
+}
+
+.nav-card:hover { transform: translateY(-5px); }
+
+.nav-card i {
+    font-size: 45px;
+    color: #0d3d7f;
+    margin-bottom: 15px;
+}
+
+/* Content Display Area */
+.content-display {
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    background: white;
+    border-radius: 10px;
+    min-height: 400px;
+    display: none;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+.content-display.active { display: block; animation: fadeIn 0.5s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   5. LOGIN & FORMS
+   ========================================= */
+/* Login Container styling is specific to login.html but included here for unified CSS */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f6f5f7;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+/* Inputs & Buttons */
+button {
+    border-radius: 20px;
+    border: 1px solid #FF4B2B;
+    background-color: #FF4B2B;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+button:active { transform: scale(0.95); }
+button:disabled { background-color: #ccc !important; border-color: #ccc !important; cursor: not-allowed; }
+
+input, select, textarea {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* =========================================
+   6. MAPS, LOGS & CART
+   ========================================= */
+#realTimeMap {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid #0d3d7f;
+    z-index: 1;
+}
+
+.threat-log {
+    background: #111;
+    color: #00ff00;
+    padding: 15px;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: scroll;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+.cart-summary, .receipt-box {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    margin-top: 15px;
+}
+.cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #ccc; }
+
+/* Stock Badges */
+.stock-badge { font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; }
+.in-stock { background: #e6fffa; color: #009e60; }
+.low-stock { background: #fffaf0; color: #d69e2e; }
+.out-stock { background: #fff5f5; color: #e53e3e; }
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* =========================================
+   8. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    header, .dash-header { flex-direction: column; gap: 15px; text-align: center; }
+    .dashboard-nav { grid-template-columns: 1fr; }
+    .nav-links { justify-content: center; }
+    .login-container { min-height: 600px; }
+}
