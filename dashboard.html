@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXEL Dashboard</title>
+    <link rel="stylesheet" href="CSS/main-style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="dash-header">
+        <div>
+            <h1 style="margin:0; font-size: 24px;">AXEL Dashboard</h1>
+            <span id="userWelcome" style="font-size: 14px; color: #ffd700;">Loading...</span>
+        </div>
+        <div>
+            <button id="viewCartBtn" class="logout-btn" style="margin-right: 15px;">
+                <i class="fas fa-shopping-cart"></i> (<span id="cartCount">0</span>)
+            </button>
+            <button id="logoutBtn" class="logout-btn">Logout <i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-nav">
+            <div class="nav-card" onclick="showSection('tracking')">
+                <i class="fas fa-shield-halved"></i><h3>Live Threat Feed</h3><p>Monitor security</p>
+            </div>
+            <div class="nav-card" onclick="showSection('ordering')">
+                <i class="fas fa-microchip"></i><h3>Automation Catalog</h3><p>Deploy tools</p>
+            </div>
+            <div class="nav-card" onclick="showSection('services')">
+                <i class="fas fa-user-secret"></i><h3>Services</h3><p>Consulting</p>
+            </div>
+            <div class="nav-card" onclick="showSection('enquiry')">
+                <i class="fas fa-clipboard-question"></i><h3>Enquiry</h3><p>Get Support</p>
+            </div>
+        </div>
+
+        <div id="mainContent" class="content-display">
+            <h2 style="color:#ccc; text-align:center; margin-top:100px;">Select a module above.</h2>
+        </div>
+    </main>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="JS/dashboard-script.js"></script>
+    <footer>
+        <p>&copy; 2025 Official AXEL Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
